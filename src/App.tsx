@@ -146,9 +146,6 @@ export default function App() {
           <BarChart3 className="w-4 h-4 text-sky-600" />
           <span>Presentación Final - Resultados de Encuesta (114 Respuestas)</span>
         </div>
-        <p className="text-slate-400 max-w-md mx-auto">
-          Herramienta de análisis ministerial para liderazgo, discipulado y mentoría de jóvenes y adultos.
-        </p>
       </footer>
     </div>
   );
