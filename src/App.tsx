@@ -46,7 +46,7 @@ export default function App() {
     { id: 'top10', label: '3. Top 10 General' },
     { id: 'comparativa', label: '4. Mujeres vs Varones' },
     { id: 'areas', label: '5. Áreas Temáticas (Q2-Q7)' },
-    { id: 'plan-accion', label: '6. Plan de Acción por Segmento' },
+    { id: 'plan-accion', label: '6. Top 5 por Segmento' },
   ];
 
   return (
@@ -94,7 +94,7 @@ export default function App() {
             📊 Presentación Final - Resultados de Encuesta
           </h1>
           <p className="text-slate-600 text-sm sm:text-base font-normal">
-            Análisis integral de 114 respuestas: Diagnóstico demográfico, datos cualitativos, comparativas y plan de acción ministerial.
+            Análisis integral de 114 respuestas.
           </p>
         </div>
 
@@ -112,9 +112,9 @@ export default function App() {
           <div className="space-y-10">
             <div className="p-5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-indigo-950 flex items-center justify-between gap-4">
               <div>
-                <h3 className="font-bold text-base">Vista Enfocada: Plan de Acción por Segmento</h3>
+                <h3 className="font-bold text-base">Vista Enfocada: Top 5 por Segmento</h3>
                 <p className="text-xs text-indigo-800">
-                  Consulte las líneas pedagógicas y espirituales recomendadas según cada grupo de edad y sexo.
+                  Consulte las problemáticas más votadas según cada grupo de edad y género.
                 </p>
               </div>
               <button

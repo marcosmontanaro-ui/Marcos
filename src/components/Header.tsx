@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-500 hidden sm:block">
-                  Diagnóstico, datos cualitativos y plan de acción pastoral
+                  Muestra total de 114 participantes
                 </p>
               </div>
             </div>

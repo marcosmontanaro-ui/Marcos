@@ -29,9 +29,9 @@ export const ActionPlanSection: React.FC = () => {
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
             <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-slate-900 text-white text-xs font-bold">
-              7
+              6
             </span>
-            Top 5 por Segmento y Líneas de Acción Sugeridas
+            Top 5 Problemáticas por Segmento
           </h2>
         </div>
 
@@ -153,7 +153,7 @@ export const ActionPlanSection: React.FC = () => {
                   </h3>
 
                   {/* Top 5 Problems */}
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
                       Top 5 Problemáticas
                     </span>
@@ -177,31 +177,6 @@ export const ActionPlanSection: React.FC = () => {
                         </li>
                       ))}
                     </ol>
-                  </div>
-                </div>
-
-                {/* Suggested Action Box */}
-                <div>
-                  <div className="rounded-xl bg-sky-50/80 border border-sky-200/80 p-4 text-xs text-slate-800 space-y-2">
-                    <div className="flex items-center gap-1.5 font-bold text-sky-950">
-                      <Target className="w-4 h-4 text-sky-600 shrink-0" />
-                      <span>Enfoque sugerido:</span>
-                    </div>
-                    <p className="text-slate-700 leading-relaxed text-xs">
-                      {segment.actionFocus}
-                    </p>
-                  </div>
-
-                  {/* Priority Tags */}
-                  <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-slate-100">
-                    {segment.keyPriorities.map((tag, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-600"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </div>
