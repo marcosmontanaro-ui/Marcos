@@ -33,9 +33,6 @@ export const ActionPlanSection: React.FC = () => {
             </span>
             Top 5 por Segmento y Líneas de Acción Sugeridas
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Estrategias pedagógicas y pastorales focalizadas para líderes de jóvenes, adolescentes y adultos
-          </p>
         </div>
 
         {/* Filter Controls */}

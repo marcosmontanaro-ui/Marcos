@@ -6,16 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   BarChart3, 
-  Layers, 
-  Presentation, 
-  Download, 
-  Share2, 
-  ArrowUp, 
-  Check, 
-  Info,
-  Calendar,
-  Sparkles,
-  ChevronDown
+  ArrowUp
 } from 'lucide-react';
 import { Header } from './components/Header';
 import { ExecutiveSummary } from './components/ExecutiveSummary';
@@ -99,10 +90,6 @@ export default function App() {
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-12">
         {/* Title Hero Block */}
         <div className="text-center max-w-3xl mx-auto space-y-2 pt-2 pb-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold border border-sky-200 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-            <span>Informe Pastoral y Pedagógico 2026</span>
-          </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             📊 Presentación Final - Resultados de Encuesta
           </h1>

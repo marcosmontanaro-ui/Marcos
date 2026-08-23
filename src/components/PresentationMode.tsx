@@ -146,7 +146,7 @@ export const PresentationMode: React.FC<PresentationModeProps> = ({ isOpen, onCl
             </div>
           )}
 
-          {/* SLIDE 2: EL ELEFANTE EN LA HABITACIÓN (Q8) */}
+          {/* SLIDE 2: ANÁLISIS CUALITATIVO (Q8) */}
           {currentSlide === 1 && (
             <div className="space-y-6 animate-in fade-in duration-300">
               <div className="text-center max-w-3xl mx-auto mb-6">
@@ -154,7 +154,7 @@ export const PresentationMode: React.FC<PresentationModeProps> = ({ isOpen, onCl
                   Pregunta Q8 • Análisis Cualitativo
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-white mt-1">
-                  "El Elefante en la Habitación"
+                  Respuestas y Patrones Cualitativos
                 </h2>
                 <p className="text-slate-400 text-sm mt-1">
                   <em>"Si tuvieras libertad total de irte y volver sin ser juzgado/a, ¿qué harías?"</em>

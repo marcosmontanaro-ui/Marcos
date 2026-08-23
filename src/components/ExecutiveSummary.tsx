@@ -18,7 +18,7 @@ export const ExecutiveSummary: React.FC = () => {
 
   return (
     <section id="resumen" className="space-y-6">
-      {/* 1. ANÁLISIS CUALITATIVO Q8: EL ELEFANTE EN LA HABITACIÓN */}
+      {/* 1. ANÁLISIS CUALITATIVO Q8 */}
       <div className="relative overflow-hidden rounded-2xl bg-white border border-purple-100 shadow-sm">
         <div className="absolute top-0 left-0 bottom-0 w-2 bg-gradient-to-b from-purple-500 to-indigo-600"></div>
         <div className="p-6 sm:p-8 pl-8 sm:pl-10">
@@ -27,7 +27,7 @@ export const ExecutiveSummary: React.FC = () => {
             1. Análisis Cualitativo
           </div>
           <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight mb-1">
-            "El Elefante en la Habitación" (Pregunta Q8)
+            Análisis Cualitativo (Pregunta Q8)
           </h3>
           <p className="text-slate-600 text-sm italic mb-6">
             Ante la consigna: <span className="font-semibold text-purple-900">"Si tuvieras libertad total de irte y volver sin ser juzgado/a, ¿qué harías?"</span>
