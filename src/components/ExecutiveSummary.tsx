@@ -106,13 +106,9 @@ export const ExecutiveSummary: React.FC = () => {
               Alerta Crítica 1: Varones y Pureza
             </h4>
           </div>
-          <p className="text-slate-700 text-sm leading-relaxed mb-4">
+          <p className="text-slate-700 text-sm leading-relaxed">
             Existe un <strong>salto abrupto en las luchas con la pornografía y tentaciones sexuales</strong> desde el inicio de la adolescencia (puesto <strong>#2 indiscutido en varones de 14 a 25 años</strong>, con 61.4% de menciones entre varones).
           </p>
-          <div className="p-3 rounded-xl bg-white border border-rose-200/80 text-xs text-rose-900 font-medium flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-rose-600 shrink-0"></span>
-            <strong>Intervención urgente:</strong> Crear grupos pequeños cerrados, sinceros y confidenciales de rendición de cuentas.
-          </div>
         </div>
 
         {/* Alerta 2: Jóvenes y el Fracaso */}
@@ -125,13 +121,9 @@ export const ExecutiveSummary: React.FC = () => {
               Alerta Crítica 2: Jóvenes y el Fracaso
             </h4>
           </div>
-          <p className="text-slate-700 text-sm leading-relaxed mb-4">
+          <p className="text-slate-700 text-sm leading-relaxed">
             El <strong>"Temor al fracaso o a equivocarme"</strong> superó ampliamente a problemáticas clásicas (72.8% total). Esto, sumado al miedo por no saber "la voluntad de Dios" (65.8%), indica <strong>altos niveles de ansiedad y presión</strong> del entorno.
           </p>
-          <div className="p-3 rounded-xl bg-white border border-amber-200/80 text-xs text-amber-900 font-medium flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-600 shrink-0"></span>
-            <strong>Intervención urgente:</strong> Redefinir la teología del éxito, la gracia y el acompañamiento en la toma de decisiones.
-          </div>
         </div>
       </div>
     </section>
