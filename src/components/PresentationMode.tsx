@@ -128,14 +128,20 @@ export const PresentationMode: React.FC<PresentationModeProps> = ({ isOpen, onCl
                 Análisis integral de 114 respuestas: Diagnóstico, datos cualitativos y plan de acción ministerial.
               </p>
 
-              {/* Highlight Box */}
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700/80 text-left max-w-3xl mx-auto shadow-2xl mt-8">
-                <div className="text-xs font-bold text-sky-400 uppercase tracking-wider mb-2">
-                  El Titular Ejecutivo
+              {/* Metrics Summary Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-8">
+                <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+                  <div className="text-3xl font-extrabold text-sky-400">114</div>
+                  <div className="text-xs text-slate-400 mt-1 font-medium">Respuestas Totales</div>
                 </div>
-                <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
-                  "Nuestra comunidad enfrenta una <strong className="text-amber-300">crisis transversal de ansiedad digital y presión emocional</strong>. El temor al fracaso y las pantallas paralizan hoy más que nunca. Necesitamos menos exigencia de perfección y más espacios seguros de rendición de cuentas."
-                </p>
+                <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+                  <div className="text-3xl font-extrabold text-indigo-400">16</div>
+                  <div className="text-xs text-slate-400 mt-1 font-medium">Frentes de Conflicto</div>
+                </div>
+                <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 text-center">
+                  <div className="text-3xl font-extrabold text-emerald-400">6</div>
+                  <div className="text-xs text-slate-400 mt-1 font-medium">Segmentos de Acción</div>
+                </div>
               </div>
             </div>
           )}

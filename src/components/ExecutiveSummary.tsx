@@ -18,62 +18,13 @@ export const ExecutiveSummary: React.FC = () => {
 
   return (
     <section id="resumen" className="space-y-6">
-      {/* 1. EL TITULAR EJECUTIVO */}
-      <div className="relative overflow-hidden rounded-2xl bg-white border border-sky-100 shadow-sm transition-all hover:shadow-md">
-        <div className="absolute top-0 left-0 bottom-0 w-2 bg-gradient-to-b from-sky-500 via-sky-600 to-indigo-600"></div>
-        <div className="p-6 sm:p-8 pl-8 sm:pl-10">
-          <div className="flex items-center gap-2 text-sky-700 text-xs font-bold uppercase tracking-wider mb-2">
-            <span className="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span>
-            1. El Titular Ejecutivo
-          </div>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
-            Crisis transversal de ansiedad digital y presión emocional
-          </h2>
-          <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-4xl font-normal">
-            Nuestra comunidad enfrenta una <strong className="font-semibold text-slate-900 bg-amber-50 px-1 py-0.5 rounded border border-amber-200/60">crisis transversal de ansiedad digital y presión emocional</strong>. Independientemente de la edad o el género, la dependencia a las pantallas y el temor al fracaso son los grandes paralizadores de hoy. Los datos exigen un giro en cómo discipulamos: <span className="font-medium text-sky-900 underline decoration-sky-300 decoration-2 underline-offset-4">necesitamos menos exigencia de perfección y más espacios seguros de rendición de cuentas, mentoría vocacional y educación digital</span>.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100">
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60">
-              <div className="p-2 rounded-lg bg-sky-100 text-sky-700 shrink-0">
-                <Tv className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-semibold text-slate-900">Uso Digital Masivo</div>
-                <div className="text-xs text-slate-600">76.3% reporta sobrecarga y distracción permanente.</div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60">
-              <div className="p-2 rounded-lg bg-amber-100 text-amber-700 shrink-0">
-                <Compass className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-semibold text-slate-900">Ansiedad Vocacional</div>
-                <div className="text-xs text-slate-600">72.8% teme al fracaso y al futuro incierto.</div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60">
-              <div className="p-2 rounded-lg bg-emerald-100 text-emerald-700 shrink-0">
-                <ShieldCheck className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-semibold text-slate-900">Arraigo y Pertenencia</div>
-                <div className="text-xs text-slate-600">+60% ratifica su compromiso y amor a la comunidad.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. ANÁLISIS CUALITATIVO Q8: EL ELEFANTE EN LA HABITACIÓN */}
+      {/* 1. ANÁLISIS CUALITATIVO Q8: EL ELEFANTE EN LA HABITACIÓN */}
       <div className="relative overflow-hidden rounded-2xl bg-white border border-purple-100 shadow-sm">
         <div className="absolute top-0 left-0 bottom-0 w-2 bg-gradient-to-b from-purple-500 to-indigo-600"></div>
         <div className="p-6 sm:p-8 pl-8 sm:pl-10">
           <div className="flex items-center gap-2 text-purple-700 text-xs font-bold uppercase tracking-wider mb-2">
             <Sparkles className="w-4 h-4 text-purple-600" />
-            2. Análisis Cualitativo
+            1. Análisis Cualitativo
           </div>
           <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight mb-1">
             "El Elefante en la Habitación" (Pregunta Q8)
@@ -143,7 +94,7 @@ export const ExecutiveSummary: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. ALERTAS CRÍTICAS */}
+      {/* 2. ALERTAS CRÍTICAS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Alerta 1: Varones y Pureza */}
         <div className="rounded-2xl bg-rose-50/80 border border-rose-200 p-6 shadow-2xs transition-all hover:bg-rose-50">

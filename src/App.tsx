@@ -50,7 +50,7 @@ export default function App() {
   };
 
   const navSections = [
-    { id: 'resumen', label: '1. Titular Ejecutivo & Q8' },
+    { id: 'resumen', label: '1. Análisis Cualitativo (Q8)' },
     { id: 'demografia', label: '2. Demografía (N=114)' },
     { id: 'top10', label: '3. Top 10 General' },
     { id: 'comparativa', label: '4. Mujeres vs Varones' },
