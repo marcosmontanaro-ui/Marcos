@@ -1,6 +1,6 @@
 {
-  "name": "AI Studio App",
-  "description": "Ready to build your web application.",
+  "name": "Resultados de Encuesta - Presentación Final",
+  "description": "Análisis integral interactivo de 114 respuestas: Diagnóstico demográfico, datos cualitativos, comparativas y plan de acción.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

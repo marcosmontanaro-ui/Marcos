@@ -3,73 +3,166 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
-import { Sparkles, Terminal, Layers } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { 
+  BarChart3, 
+  Layers, 
+  Presentation, 
+  Download, 
+  Share2, 
+  ArrowUp, 
+  Check, 
+  Info,
+  Calendar,
+  Sparkles,
+  ChevronDown
+} from 'lucide-react';
+import { Header } from './components/Header';
+import { ExecutiveSummary } from './components/ExecutiveSummary';
+import { DemographicsSection } from './components/DemographicsSection';
+import { TransversalTop10 } from './components/TransversalTop10';
+import { GenderComparison } from './components/GenderComparison';
+import { ThematicAreas } from './components/ThematicAreas';
+import { ActionPlanSection } from './components/ActionPlanSection';
+import { PresentationMode } from './components/PresentationMode';
 
 export default function App() {
+  const [activeView, setActiveView] = useState<'report' | 'presentation' | 'action-plan'>('report');
+  const [isPresentationOpen, setIsPresentationOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Monitor scroll for back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navSections = [
+    { id: 'resumen', label: '1. Titular Ejecutivo & Q8' },
+    { id: 'demografia', label: '2. Demografía (N=114)' },
+    { id: 'top10', label: '3. Top 10 General' },
+    { id: 'comparativa', label: '4. Mujeres vs Varones' },
+    { id: 'areas', label: '5. Áreas Temáticas (Q2-Q7)' },
+    { id: 'plan-accion', label: '6. Plan de Acción por Segmento' },
+  ];
+
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col justify-between font-sans selection:bg-neutral-800">
-      {/* Header */}
-      <header className="border-b border-neutral-800/80 px-6 py-4 flex items-center justify-between backdrop-blur-md sticky top-0 z-10 bg-neutral-950/80">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center border border-neutral-700/60 shadow-inner">
-            <Sparkles className="w-4 h-4 text-neutral-300" />
-          </div>
-          <span className="font-semibold tracking-tight text-neutral-200 text-sm">
-            AI Studio App
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-950/60 text-emerald-400 border border-emerald-800/50">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-            Environment Ready
-          </span>
-        </div>
-      </header>
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-sky-500 selection:text-white">
+      {/* Presentation Mode Overlay */}
+      <PresentationMode 
+        isOpen={isPresentationOpen} 
+        onClose={() => setIsPresentationOpen(false)} 
+      />
 
-      {/* Main Hero */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center max-w-3xl mx-auto w-full">
-        <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center mb-8 shadow-sm">
-          <Terminal className="w-6 h-6 text-neutral-400" />
-        </div>
+      {/* Main App Header */}
+      <Header
+        activeView={activeView}
+        setActiveView={setActiveView}
+        onOpenPresentation={() => setIsPresentationOpen(true)}
+      />
 
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-100 mb-4">
-          Ready to build your application
-        </h1>
-
-        <p className="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-xl mb-10 font-normal">
-          The workspace has been initialized and is ready. Tell me what you'd like to create, build, or fix, and I will implement it for you.
-        </p>
-
-        {/* Quick prompt ideas or info */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full text-left">
-          <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-colors">
-            <div className="flex items-center gap-2 text-xs font-medium text-neutral-400 mb-1">
-              <Layers className="w-3.5 h-3.5" />
-              Full Stack & Frontend
+      {/* Quick Section Anchor Sub-nav (only in full report mode) */}
+      {activeView === 'report' && (
+        <div className="bg-white/80 backdrop-blur-xs border-b border-slate-200/80 sticky top-[61px] z-30 hidden md:block print:hidden shadow-2xs">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-1 py-2 overflow-x-auto no-scrollbar text-xs font-medium text-slate-600">
+              <span className="text-slate-400 mr-2 shrink-0 flex items-center gap-1">
+                <span>Saltar a:</span>
+              </span>
+              {navSections.map((sec) => (
+                <a
+                  key={sec.id}
+                  href={`#${sec.id}`}
+                  className="px-2.5 py-1 rounded-md hover:bg-slate-100 hover:text-slate-900 transition-colors shrink-0"
+                >
+                  {sec.label}
+                </a>
+              ))}
             </div>
-            <p className="text-sm text-neutral-300">
-              Interactive dashboards, data visualizers, calculators, forms, and utilities.
-            </p>
-          </div>
-
-          <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-colors">
-            <div className="flex items-center gap-2 text-xs font-medium text-neutral-400 mb-1">
-              <Sparkles className="w-3.5 h-3.5" />
-              AI & Integrations
-            </div>
-            <p className="text-sm text-neutral-300">
-              Gemini AI intelligence, cloud databases, authentication, and custom APIs.
-            </p>
           </div>
         </div>
+      )}
+
+      {/* Main Body Content */}
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-12">
+        {/* Title Hero Block */}
+        <div className="text-center max-w-3xl mx-auto space-y-2 pt-2 pb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold border border-sky-200 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+            <span>Informe Pastoral y Pedagógico 2026</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            📊 Presentación Final - Resultados de Encuesta
+          </h1>
+          <p className="text-slate-600 text-sm sm:text-base font-normal">
+            Análisis integral de 114 respuestas: Diagnóstico demográfico, datos cualitativos, comparativas y plan de acción ministerial.
+          </p>
+        </div>
+
+        {/* Dynamic Views */}
+        {activeView === 'report' ? (
+          <div className="space-y-14">
+            <ExecutiveSummary />
+            <DemographicsSection />
+            <TransversalTop10 />
+            <GenderComparison />
+            <ThematicAreas />
+            <ActionPlanSection />
+          </div>
+        ) : (
+          <div className="space-y-10">
+            <div className="p-5 rounded-2xl bg-indigo-50/80 border border-indigo-200 text-indigo-950 flex items-center justify-between gap-4">
+              <div>
+                <h3 className="font-bold text-base">Vista Enfocada: Plan de Acción por Segmento</h3>
+                <p className="text-xs text-indigo-800">
+                  Consulte las líneas pedagógicas y espirituales recomendadas según cada grupo de edad y sexo.
+                </p>
+              </div>
+              <button
+                onClick={() => setActiveView('report')}
+                className="px-3.5 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors shrink-0 cursor-pointer"
+              >
+                Volver al Informe Completo
+              </button>
+            </div>
+            <ActionPlanSection />
+          </div>
+        )}
       </main>
 
+      {/* Floating Back to top button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 p-3 rounded-full bg-slate-900 text-white shadow-lg hover:bg-slate-800 hover:scale-105 transition-all z-40 print:hidden cursor-pointer"
+          title="Volver al inicio"
+        >
+          <ArrowUp className="w-4 h-4" />
+        </button>
+      )}
+
       {/* Footer */}
-      <footer className="border-t border-neutral-900 px-6 py-4 text-center text-xs text-neutral-500">
-        Google AI Studio &bull; TypeScript &bull; Tailwind CSS
+      <footer className="border-t border-slate-200 bg-white py-8 px-4 sm:px-6 lg:px-8 mt-16 text-center text-xs text-slate-500 space-y-2 print:border-t-2">
+        <div className="flex items-center justify-center gap-2 font-medium text-slate-700">
+          <BarChart3 className="w-4 h-4 text-sky-600" />
+          <span>Presentación Final - Resultados de Encuesta (114 Respuestas)</span>
+        </div>
+        <p className="text-slate-400 max-w-md mx-auto">
+          Herramienta de análisis ministerial para liderazgo, discipulado y mentoría de jóvenes y adultos.
+        </p>
       </footer>
     </div>
   );
 }
-
